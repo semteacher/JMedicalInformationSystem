@@ -1,0 +1,28 @@
+/* 
+    Document   : zkstyle
+    Created on : 19 січ 2012, 15:04:21
+    Author     : Admin
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+.mainwnd .z-window-embedded-header, 
+.hospWin .z-window-embedded-header
+{ 
+    font-weight: bold;
+    font-size: 20px;  
+    font-family: Arial,Helvetica,sans-serif;
+}
+.mainwnd .maingrid .z-label
+{
+   font-size: 16px;   
+}
+.mainwnd .maingrid .z-a, 
+.hospWin .maingrid .z-a
+{
+   font-size: 16px;   
+}
