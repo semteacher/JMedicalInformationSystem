@@ -43,6 +43,7 @@
                         <zk:row>
                             <%--
                             <zk:image id="image" />
+                            
                             <zk:zscript>
                                 byte[] bytes =${myhospitals.photo};
                                 org.zkoss.image.AImage img = new org.zkoss.image.AImage("tmp.jpg",bytes);

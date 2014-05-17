@@ -9,24 +9,20 @@
 <jsp:useBean id="MisBean" class="session.MisSessionBean" scope="session"/>
 <jsp:useBean id="NewPatient" class="beans.MisPatient" scope="session"/>
 <sql:update var="newpatientdata" dataSource="jdbc/mis">
-    INSERT INTO mis.mis_patient (family, name, third_name, adress, email, phone1, phone2, id_city)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO mis.mis_patient (family, name, third_name, adress, email, phone1, phone2, birthday, id_city)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     <sql:param value="${NewPatient.family}"/> 
     <sql:param value="${NewPatient.name}"/> 
     <sql:param value="${NewPatient.thirdName}"/> 
     <sql:param value="${NewPatient.adress}"/> 
     <sql:param value="${NewPatient.email}"/> 
     <sql:param value="${NewPatient.phone1}"/> 
-    <sql:param value="${NewPatient.phone2}"/> 
+    <sql:param value="${NewPatient.phone2}"/>
+    <sql:param value="${NewPatient.birthday}"/>
     <sql:param value="1"/> 
 </sql:update>
 <sql:query var="selectedpatient" dataSource="jdbc/mis">
-    select id, family, name, third_name from mis.mis_patient
-    where mis.mis_patient.id = (SELECT LAST_INSERT_ID()) 
-    <%--
-        where id=?
-        <sql:param value="${pagecontext.requrest.queryString}"/>
-    --%>
+    select id from mis.mis_patient where mis.mis_patient.id = (SELECT LAST_INSERT_ID())
 </sql:query>
     <sql:update var="updateshedule" dataSource="jdbc/mis">
     UPDATE mis.mis_schedule SET mis.mis_schedule.assigned_patient_id= ? where mis.mis_schedule.id =?    
@@ -42,8 +38,9 @@
     --%>
 </sql:query>
 <div id="content">
-    <p id="patient">Шановний, ${selectedpatient.rows[0].family} ${selectedpatient.rows[0].name} ${selectedpatient.rows[0].third_name}
+    <p id="patient">Шановний, ${NewPatient.family} ${NewPatient.name} ${NewPatient.thirdName}
     підтверджуємо, що Ви записані на прийом до:</p>
     <p id="hospitalname">${selectedhospital.rows[0].title}, м.${selectedhospital.rows[0].city_name}, ${selectedhospital.rows[0].contacts} </p>
-    <a href="/physician_schedule?doctorinhospid=${MisBean.seldoctorinhosp}">Go to shedule again!</a>
+    <a href="/MedicalInformationSystem/physician_schedule?doctorinhospid=${MisBean.seldoctorinhosp}">Go to shedule again!</a>
+    <p>sucessfully was aded ${newpatientdata} records</p>
 </div>

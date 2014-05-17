@@ -4,6 +4,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="org.zkoss.zkplus.databind.AnnotateDataBinderInit"%>
 <%@page import="org.zkoss.image.AImage"%>
+<%@page import="javax.servlet.jsp.jstl.sql.Result"%>
 <%-- 
     Document   : 02hospitals
     Created on : 03.01.2012, 17:29:24
@@ -14,11 +15,20 @@
     SELECT type_name FROM mis.mis_guide_hospital_type where id=?
     <sql:param value="${MisBean.selhosptype}"/>
 </sql:query>
-<sql:query var="hospitals" dataSource="jdbc/mis">   
+<sql:query var="hospitals" dataSource="jdbc/mis" scope="request">   
     select mis_hospital.id, title, photo, contacts, city_name from mis.mis_hospital, mis.mis_guide_city
     where (mis.mis_guide_city.id=mis.mis_hospital.city_id)and(mis.mis_hospital.hospital_type_id=?)
     <sql:param value="${MisBean.selhosptype}"/>
 </sql:query>
+    <%
+    Object[][] myobjarr;
+    myobjarr = ((Result) request.getAttribute("hospitals")).getRowsByIndex();
+    byte[] mybyte;
+    mybyte = (byte[]) myobjarr[0][2];
+    request.setAttribute("mybytearr", mybyte);
+    org.zkoss.image.AImage img = new org.zkoss.image.AImage("",mybyte);
+    request.setAttribute("myimgbytearr", img);
+    %>
 <div id="content">
     <zk:page id="pg2" style="height:600px;width=1000px">
         <zk:init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit"/>
@@ -38,15 +48,12 @@
                             <zk:label value="${myhospitals.city_name}"/>
                             <zk:label value="${myhospitals.contacts}"/>
                             
-                            <zk:image id="myimage" />
-                            <%--
+                            <zk:image id="myimage" />                            
                             <zk:zscript>
-                                byte[] bytes =${myhospitals.photo};
-                                org.zkoss.image.AImage img = new org.zkoss.image.AImage("",bytes);
-            myimage.setContent(img);
-            myimage.invalidate();
+                                org.zkoss.image.Image img0 = requestScope.get("myimgbytearr");
+                                myimage.setContent(img0);
                             </zk:zscript>
-                           --%>
+                           
                         </zk:row>
                     </c:forEach>
                 </zk:rows>
