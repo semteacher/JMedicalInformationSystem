@@ -3,7 +3,6 @@
 <%@taglib prefix="zk" uri="http://www.zkoss.org/jsp/zul" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="org.zkoss.zkplus.databind.AnnotateDataBinderInit"%>
-
 <%-- 
     Document   : 02hospitals
     Created on : 03.01.2012, 17:29:24

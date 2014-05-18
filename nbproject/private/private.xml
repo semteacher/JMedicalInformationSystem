@@ -4,9 +4,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/src/java/session/MisSessionBean.java</file>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/src/java/beans/MisGuideCity.java</file>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/META-INF/context.xml</file>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/WEB-INF/web.xml</file>
             <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/src/java/controller/MyZKController.java</file>
-            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/src/java/controller/ControllerServlet.java</file>
         </group>
     </open-files>
 </project-private>

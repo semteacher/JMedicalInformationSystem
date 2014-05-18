@@ -5,42 +5,31 @@
         <data xmlns="http://www.netbeans.org/ns/web-project/3">
             <name>MedicalInformationSystem</name>
             <minimum-ant-version>1.6.5</minimum-ant-version>
+            <explicit-platform explicit-source-supported="true"/>
             <web-module-libraries>
-                <library dirs="200">
-                    <file>${libs.jstl11.classpath}</file>
-                </library>
                 <library dirs="200">
                     <file>${libs.eclipselink.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${libs.ZK5.0.10CE.classpath}</file>
-                </library>
-                <library dirs="200">
-                    <file>${libs.zkjsp5.classpath}</file>
                 </library>
                 <library dirs="200">
                     <file>${libs.zk5jsp.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${libs.zk5.classpath}</file>
-                    <path-in-war>WEB-INF/classes</path-in-war>
-                </library>
-                <library dirs="200">
-                    <file>${libs.zk-calendar-bin-2.1.0.classpath}</file>
-                </library>
-                <library dirs="200">
                     <file>${libs.jstl.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${libs.javaee-api-6.0.classpath}</file>
+                    <file>${libs.ZK5.0.10CE.classpath}</file>
                     <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
                 <library dirs="200">
-                    <file>${libs.zk-calendar213.classpath}</file>
-                    <path-in-war>WEB-INF/classes</path-in-war>
+                    <file>${libs.MySQLDriver.classpath}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
+                </library>
+                <library dirs="200">
+                    <file>${libs.zk-calendar210.classpath}</file>
+                    <path-in-war>WEB-INF/lib</path-in-war>
                 </library>
             </web-module-libraries>
             <web-module-additional-libraries/>
