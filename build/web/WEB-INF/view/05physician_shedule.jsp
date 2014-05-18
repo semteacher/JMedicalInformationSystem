@@ -35,8 +35,10 @@
 </sql:query>
 <sql:query var="physicianshedule" dataSource="jdbc/mis" scope="request">
     select work_date, timebegin, timeend, assigned_patient_id, id from mis.mis_schedule 
-    where mis.mis_schedule.id_physician_in_hospital=?
-    <sql:param value="${MisBean.seldoctorinhosp}"/>   
+    where (mis.mis_schedule.id_physician=?)and(mis.mis_schedule.id_speciality=?)and(mis.mis_schedule.id_hospital=?)
+    <sql:param value="${MisBean.seldoctorinhosp}"/> 
+    <sql:param value="${MisBean.selspeciality}"/>
+    <sql:param value="${MisBean.selhospital}"/>    
 </sql:query>
 <%
     SimpleCalendarModel scm = new SimpleCalendarModel();
