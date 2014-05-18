@@ -4,10 +4,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/WEB-INF/view/index.jsp</file>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/WEB-INF/view/02hospitals.jsp</file>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/WEB-INF/view/04hospital_physician_speciality.jsp</file>
+            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/WEB-INF/view/05physician_shedule.jsp</file>
             <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/src/java/beans/MisGuideCity.java</file>
             <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/META-INF/context.xml</file>
             <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/web/WEB-INF/web.xml</file>
-            <file>file:/D:/MyGitHub/java/JMedicalInformationSystem/src/java/controller/MyZKController.java</file>
         </group>
     </open-files>
 </project-private>
